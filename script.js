@@ -52,6 +52,7 @@ buttons.forEach(button => {
             if (taskMinusValue > 0) {
                 alert('Board updated successfully');
             } else {
+                alert('Board updated successfully');
                 alert('Congratulations! You have completed the current task');
             }
 
@@ -67,7 +68,7 @@ buttons.forEach(button => {
             p.innerText = `You have completed the task "${title}" at ${nowTime}`;
 
           
-            document.getElementById('clear-history').appendChild(p);
+            document.getElementById('task-history').appendChild(p);
         }
     });
 });
@@ -80,6 +81,10 @@ document.getElementById('Discover').addEventListener('click',
 )
 
 // clear buttons
-document.getElementById('clear-btn').addEventListener('click' , function(){
-    document.getElementById('clear-history').textContent = '';
+
+document.getElementById('clear-btn').addEventListener('click' , function(event){
+    event.preventDefault()
+//    c document.getElementById('task-history'). = '';
+const taskHistory = document.getElementById('task-history')
+   taskHistory.innerHTML = "";
 })
