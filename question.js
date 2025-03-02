@@ -3,10 +3,8 @@ document.getElementById('back-main').addEventListener('click' , function(){
     
 })
 
-
-//home to page
-document.getElementById('Discover').addEventListener('click' , function(){
-    // window.location.href = 'question.html';
-    console.log("hello")
-   
-})
+// document.getElementById('Discover').addEventListener('click',
+//     function () {
+//       window.location.href =  "question.html"
+//     }
+// )

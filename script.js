@@ -67,7 +67,7 @@ buttons.forEach(button => {
             p.innerText = `You have completed the task "${title}" at ${nowTime}`;
 
           
-            document.getElementById('task-history').appendChild(p);
+            document.getElementById('clear-history').appendChild(p);
         }
     });
 });
@@ -75,6 +75,11 @@ buttons.forEach(button => {
 //home to page
 document.getElementById('Discover').addEventListener('click',
     function () {
-        console.log('hello')
+        window.location.href =  "question.html"
     }
 )
+
+// clear buttons
+document.getElementById('clear-btn').addEventListener('click' , function(){
+    document.getElementById('clear-history').textContent = '';
+})
