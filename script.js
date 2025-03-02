@@ -27,3 +27,54 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("current-date").innerHTML = 
         `${dayName}, <br> <span class="font-bold">${month} ${date} ${year}</span>`;
 });
+//task
+const buttons = document.querySelectorAll(".btn-primary");
+
+let taskplusValue = 23;
+let taskMinusValue = 6;
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+       
+        if (taskMinusValue > 0) {
+            taskplusValue++;
+            taskMinusValue--;
+
+          
+            document.getElementById('task-plas').textContent = taskplusValue;
+            document.getElementById('task-minus').textContent = `0${taskMinusValue}`;
+
+          
+            button.disabled = true;
+            button.style.background = 'gray';
+
+            
+            if (taskMinusValue > 0) {
+                alert('Board updated successfully');
+            } else {
+                alert('Congratulations! You have completed the current task');
+            }
+
+         
+            const time = new Date();
+            const nowTime = `${time.getHours() % 12 || 12}:${time.getMinutes() < 10 ? '0' : ''}${time.getMinutes()}${time.getHours() >= 12 ? 'PM' : 'AM'}`;
+
+           
+            const taskCard = button.closest('.task');
+            const title = taskCard.querySelector('.card-title').textContent;
+            const p = document.createElement('p');
+            p.classList.add('py-5');
+            p.innerText = `You have completed the task "${title}" at ${nowTime}`;
+
+          
+            document.getElementById('task-history').appendChild(p);
+        }
+    });
+});
+
+//home to page
+document.getElementById('Discover').addEventListener('click',
+    function () {
+        console.log('hello')
+    }
+)

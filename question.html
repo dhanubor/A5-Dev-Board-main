@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- daisy UI -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+     <script src="https://cdn.tailwindcss.com"></script>
+     <!-- google font  -->
+     <style>
+         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ 
+         body {
+          font-family: "Outfit", sans-serif;
+          font-style: normal;
+ }
+     </style> 
+    <title>DOM Question</title>
+</head>
+<body >
+    <nav class="bg-white p-6 rounded-lg container mx-auto flex justify-between mt-4">
+        <div class="flex">
+         <img class="w-10 h-10" src="assets/logo.png" alt="">
+         <h1 class="text-2xl ml-2">Dev <span class="font-bold">Board</span></h1>
+        </div>
+
+        <div class="flex">
+            <button id="back-main" class="btn-md bg-[#3752FD] text-white rounded-lg mr-6">Back To Desk</button>
+        </div>
+     </nav>
+
+     <main class="container mx-auto p-4">
+        <div class="ml-6">
+            <h1 class="text-2xl font-bold text-center mb-5">Blogs</h1>
+            <div class="mb-5">
+                <p class="text-2xl font-semibold mt-3">Question-1: What are the different ways to select an element in the DOM?</p>
+                <p class="text-xl mt-4 text-gray-600">Ans: DOM-এ একটি উপাদান নির্বাচন করার বিভিন্ন পদ্ধতি:</p>
+              <ol class="list-decimal ml-6 text-gray-600">
+                  <li>getElementById(): Selects by ID.</li>
+                  <li>getElementsByClassName():এটি আইডি দিয়ে একটি উপাদান নির্বাচন করে।</li>
+                  <li>getElementsByTagName(): এটি ক্লাস নাম দিয়ে এক বা একাধিক উপাদান নির্বাচন করে।</li>
+                  <li>querySelector(): এটি ট্যাগ নাম দিয়ে এক বা একাধিক উপাদান নির্বাচন করে।</li>
+                  <li>querySelectorAll(): এটি CSS সিলেক্টরের মাধ্যমে প্রথম মিলিত উপাদান নির্বাচন করে।</li>
+                  <li>childNodes:এটি CSS সিলেক্টরের মাধ্যমে সব মিলিত উপাদান নির্বাচন করে।</li>
+                  <li>parentNode: এটি একটি উপাদানের প্যারেন্ট নোড নির্বাচন করে।</li>
+                  <li>closest(): এটি সিলেক্টর মিলিয়ে সবচেয়ে কাছের ancestor উপাদান নির্বাচন করে।</li>
+              </ol>
+            </div>
+            <hr class="border-t-2 border-dashed border-gray-400 mt-2"> <br>
+
+            <div>
+                <p class="text-xl font-semibold">Question-2: What is the difference between innerHTML, innerText, and textContent ?</p>
+                <p class = "mt-4 text-gray-600">Ans : innerHTML, innerText, এবং textContent এর মধ্যে পার্থক্য: </p>
+            <ul class="list-decimal ml-6 text-gray-600" >
+                <li>innerHTML: এটি HTML কন্টেন্ট পেতে বা সেট করতে ব্যবহৃত হয়, যার মধ্যে ট্যাগও অন্তর্ভুক্ত থাকে।</li>
+                <li>innerText: এটি উপাদানের যে টেক্সট ব্যবহারকারীর জন্য দৃশ্যমান, সেটি গ্রহণ করে, এবং CSS বা স্টাইল অনুযায়ী কিছু টেক্সট লুকানো থাকলে তা বাদ দেয়।</li>
+                <li>textContent: এটি সব টেক্সট কন্টেন্ট দেয়, যে কোনো স্টাইল বা লেআউট ফ্যাক্টরকে উপেক্ষা করে, এমনকি যদি কিছু টেক্সট লুকানো থাকে তাও দেখায়।</li>
+            </ul>
+            </div>
+            <hr class="border-t-2 border-dashed border-gray-400 mt-2">
+
+            <p class="text-xl font-semibold mt-5">Question-3: What is event delegation in the DOM?</p>
+            <p class="ml-2 mt-2 text-gray-600">Ans: ইভেন্ট ডেলিগেশন হল একটি কৌশল যেখানে প্রতিটি চাইল্ড উপাদানের জন্য আলাদা ইভেন্ট লিসেনার যোগ না করে, একটি প্যারেন্ট উপাদানে ইভেন্ট লিসেনার যুক্ত করা হয়। ইভেন্টটি বাবলিংয়ের মাধ্যমে প্যারেন্টে পৌঁছে যায় এবং প্যারেন্ট সেই ইভেন্টটি হ্যান্ডেল করে। এটি ডায়নামিক উপাদানের জন্য কার্যকর এবং দক্ষ উপায়।</p>
+            <hr class="border-t-2 border-dashed border-gray-400 mt-2">
+            <p class="text-xl font-semibold mt-5">Question-4: What is event bubbling in the DOM?</p>
+            <p class="mt-2 ml-2 text-gray-600">Ans: ইভেন্ট বাবলিং হল একটি প্রক্রিয়া যেখানে একটি ইভেন্ট প্রথমে নির্দিষ্ট টার্গেট উপাদানে ঘটে, তারপর সেটি ক্রমান্বয়ে তার প্যারেন্ট এবং আরও উপরের লেভেলের উপাদানে পৌঁছে যায়। এর ফলে প্যারেন্ট উপাদান চাইল্ড উপাদানের ইভেন্ট হ্যান্ডেল করতে পারে, যা কোডিংকে সহজ করে।</p>
+            <hr class="border-t-2 border-dashed border-gray-400 mt-2">
+            <p class="text-xl font-semibold mt-5">Question-5: How do you create, add, and remove elements using JavaScript?</p>
+            <p class="mt-2 ml-2 text-gray-600">Ans: JavaScript-এ নতুন একটি উপাদান তৈরি করতে <code>document.createElement(tagName)</code> ব্যবহার করা হয়। এটি DOM-এ যোগ করতে <code>appendChild()</code> ব্যবহার করা হয় এবং কোনো উপাদান মুছতে <code>removeChild()</code> অথবা <code>remove()</code> ব্যবহার করা হয়।</p>
+            
+        </div>
+     </main>
+
+    <script src="./question.js"></script>
+</body>
+</html>
